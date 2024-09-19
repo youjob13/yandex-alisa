@@ -4,5 +4,5 @@
     "main": "dist/index.js",
     "author": "",
     "license": "ISC",
-    "type": "commonjs"
+    "type": "module"
 }
