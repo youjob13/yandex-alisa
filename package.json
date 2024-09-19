@@ -1,0 +1,40 @@
+{
+    "name": "yandex-alisa",
+    "version": "1.0.0",
+    "description": "Custom commands for Yandex Alisa",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "dev": "nodemon --exec node --loader ts-node/esm src/index.ts",
+        "start": "node dist/index.js",
+        "build": "tsc",
+        "lint": "eslint src/**/*.ts",
+        "lint:fix": "eslint src/**/*.ts --fix",
+        "format": "prettier . --write"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/youjob13/yandex-alisa.git"
+    },
+    "author": "Danil Rodionow",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/youjob13/yandex-alisa/issues"
+    },
+    "engines": {
+        "node": ">=20.9.0",
+        "npm": ">=10.1.0"
+    },
+    "homepage": "https://github.com/youjob13/yandex-alisa#readme",
+    "devDependencies": {
+        "@eslint/js": "9.10.0",
+        "@types/eslint__js": "8.42.3",
+        "@types/node": "22.5.5",
+        "eslint": "9.10.0",
+        "nodemon": "3.1.5",
+        "prettier": "3.3.3",
+        "ts-node": "10.9.2",
+        "typescript": "5.6.2",
+        "typescript-eslint": "8.6.0"
+    }
+}
