@@ -1,1 +1,1 @@
-{"version":3,"file":"audio-reply.service.model.d.ts","sourceRoot":"","sources":["../../lib/audio-reply.service.model.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,kBAAkB;IAC/B,IAAI,EAAE,MAAM,OAAO,CAAC,IAAI,CAAC,CAAA;CAC5B"}
+{"version":3,"file":"audio-reply.service.model.d.ts","sourceRoot":"","sources":["../../lib/audio-reply.service.model.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,YAAY;IACzB,QAAQ,EAAE,MAAM,EAAE,GAAG,MAAM,CAAA;CAC9B;AAED,MAAM,WAAW,kBAAkB;IAC/B,IAAI,EAAE,CAAC,OAAO,EAAE,MAAM,EAAE,OAAO,EAAE,YAAY,KAAK,OAAO,CAAC,IAAI,CAAC,CAAA;CAClE"}

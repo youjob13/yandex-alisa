@@ -1,5 +1,5 @@
-import { IAudioReplyService } from './audio-reply.service.model.js';
+import { IAudioReplyService, IPlayOptions } from './audio-reply.service.model.js';
 export declare class AudioReplyService implements IAudioReplyService {
-    play(): Promise<void>;
+    play(command: string, options: IPlayOptions): Promise<void>;
 }
 //# sourceMappingURL=audio-reply.service.d.ts.map
