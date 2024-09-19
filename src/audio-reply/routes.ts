@@ -9,7 +9,7 @@ export const createRouter = (app: FastifyInstance) => {
     })
 
     app.post('/', async (request) => {
-        console.log('[Request]', request)
+        console.log('[Request]', request.body)
         await audioReplyService.play('i am home', {
             variants: ['watermellon hi hi'],
         })

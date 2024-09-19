@@ -5,7 +5,7 @@ export const createRouter = (app) => {
         return 'Hi';
     });
     app.post('/', async (request) => {
-        console.log('[Request]', request);
+        console.log('[Request]', request.body);
         await audioReplyService.play('i am home', {
             variants: ['watermellon hi hi'],
         });
