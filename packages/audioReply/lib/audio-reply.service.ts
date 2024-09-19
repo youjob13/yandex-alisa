@@ -1,51 +1,15 @@
 import { IRequestBody } from '@myalisa/alisa-api'
-import { IAudioReplyService } from './audio-reply.service.model.js'
+import {
+    IAudioReplyArgs,
+    IAudioReplyService,
+} from './audio-reply.service.model.js'
+import { CommandFactory } from './factories.js'
 
 export class AudioReplyService implements IAudioReplyService {
-    async play({ request }: IRequestBody, commandArgs: unknown) {
-        const command = request.command
+    play({ request }: IRequestBody, args: IAudioReplyArgs) {
+        const { command } = request
 
-        const commandFactory = new CommandFactory(command)
-        const response = await commandFactory.run(commandArgs)
-        return response
-    }
-}
-
-interface ICommandFactory<TArgs, TResponse> {
-    run: (args: TArgs) => Promise<TResponse>
-}
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-class CommandFactory implements ICommandFactory<any, any> {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    constructor(command: string) {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        // let factory: ICommandFactory<any, any>
-        // switch (command.toLowerCase()) {
-        //     case 'я дома':
-        //     case 'i am home': {
-        //         factory = new GreetingFactory()
-        //         break
-        //     }
-        // }
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-expect-error
-        return new GreetingFactory()
-    }
-
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    async run(_args: unknown) {
-        throw new Error('Method is not implemented')
-    }
-}
-
-class GreetingFactory implements ICommandFactory<string | string[], string> {
-    async run(rawVariants: string | string[]) {
-        const variants = Array.isArray(rawVariants)
-            ? rawVariants
-            : [rawVariants]
-
-        const selectedVariant = Math.floor(Math.random() * variants.length)
-
-        return Promise.resolve(variants[selectedVariant])
+        const commandFactory = new CommandFactory(command, args)
+        return commandFactory.run()
     }
 }

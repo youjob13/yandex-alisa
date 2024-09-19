@@ -1,5 +1,9 @@
-import { IRequestBody } from '@myalisa/alisa-api/index.js';
+import { IRequestBody, ISkillResponse } from '@myalisa/alisa-api';
 export interface IAudioReplyService {
-    play: (request: IRequestBody, commandArgs: unknown) => Promise<void>;
+    play: (request: IRequestBody, commandArgs: IAudioReplyArgs) => ISkillResponse;
+}
+export interface IAudioReplyArgs {
+    yaDialogId: string;
+    resourcesIds: string | string[];
 }
 //# sourceMappingURL=audio-reply.service.model.d.ts.map

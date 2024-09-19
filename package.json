@@ -52,6 +52,7 @@
     "workspaces": [
         "packages/config",
         "packages/audioReply",
-        "packages/alisa-api"
+        "packages/alisa-api",
+        "packages/shared"
     ]
 }

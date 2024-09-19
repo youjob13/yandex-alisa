@@ -40,5 +40,29 @@ export interface IRequestBody {
     request: IAlisaRequest;
     version: string;
 }
+interface ISkillResponseObj {
+    text: string;
+    tts: string;
+    end_session: boolean;
+    directives?: object;
+}
+interface IValue {
+    value: number;
+}
+interface IAnalyticsEvent {
+    name: string;
+    value?: any;
+}
+export interface IAnalytics {
+    events: IAnalyticsEvent[];
+}
+export interface ISkillResponse {
+    response: ISkillResponseObj;
+    session_state?: IValue;
+    user_state_update?: IValue;
+    application_state?: IValue;
+    analytics?: IAnalytics;
+    version: string;
+}
 export {};
 //# sourceMappingURL=models.d.ts.map

@@ -4,5 +4,8 @@
     "main": "dist/index.js",
     "author": "",
     "license": "ISC",
-    "type": "module"
+    "type": "module",
+    "dependencies": {
+        "@myalisa/shared": "^1.0.0"
+    }
 }
