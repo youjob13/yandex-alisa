@@ -10,7 +10,8 @@
         "build": "tsc -b tsconfig.json",
         "lint": "eslint src/**/*.ts packages/**/*.ts",
         "lint:fix": "eslint src/**/*.ts packages/**/*.ts --fix",
-        "format": "prettier . --write"
+        "format": "prettier . --write",
+        "test": "npm run test --workspaces --if-present"
     },
     "repository": {
         "type": "git",
@@ -28,7 +29,8 @@
     "pre-commit": [
         "format",
         "lint:fix",
-        "build"
+        "build",
+        "test"
     ],
     "homepage": "https://github.com/youjob13/yandex-alisa#readme",
     "devDependencies": {
