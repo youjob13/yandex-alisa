@@ -8,18 +8,20 @@ export class AudioReplyService {
 }
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 class CommandFactory {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     constructor(command) {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        let factory;
-        switch (command) {
-            case 'я дома': {
-                factory = new GreetingFactory();
-                break;
-            }
-        }
+        // let factory: ICommandFactory<any, any>
+        // switch (command.toLowerCase()) {
+        //     case 'я дома':
+        //     case 'i am home': {
+        //         factory = new GreetingFactory()
+        //         break
+        //     }
+        // }
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-expect-error
-        return factory;
+        return new GreetingFactory();
     }
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     async run(_args) {
