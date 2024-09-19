@@ -1,7 +1,5 @@
-export interface IPlayOptions {
-    variants: string[] | string;
-}
+import { IRequestBody } from '@myalisa/alisa-api/index.js';
 export interface IAudioReplyService {
-    play: (command: string, options: IPlayOptions) => Promise<void>;
+    play: (request: IRequestBody, commandArgs: unknown) => Promise<void>;
 }
 //# sourceMappingURL=audio-reply.service.model.d.ts.map

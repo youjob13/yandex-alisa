@@ -1,5 +1,6 @@
-import { IAudioReplyService, IPlayOptions } from './audio-reply.service.model.js';
+import { IRequestBody } from '@myalisa/alisa-api/index.js';
+import { IAudioReplyService } from './audio-reply.service.model.js';
 export declare class AudioReplyService implements IAudioReplyService {
-    play(command: string, options: IPlayOptions): Promise<void>;
+    play({ request }: IRequestBody, commandArgs: unknown): Promise<void>;
 }
 //# sourceMappingURL=audio-reply.service.d.ts.map

@@ -1,3 +1,4 @@
+import { IRequestBody } from '@myalisa/alisa-api'
 import { AudioReplyService } from '@myalisa/audio-reply'
 import { FastifyInstance } from 'fastify'
 
@@ -10,9 +11,10 @@ export const createRouter = (app: FastifyInstance) => {
 
     app.post('/', async (request) => {
         console.log('[Request]', request.body)
-        await audioReplyService.play('i am home', {
-            variants: ['watermellon hi hi'],
-        })
-        return { hello: 1 }
+        const result = await audioReplyService.play(
+            request.body as IRequestBody,
+            ["Hello it's me", "It's not me"]
+        )
+        return result
     })
 }

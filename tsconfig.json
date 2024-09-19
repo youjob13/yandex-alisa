@@ -3,6 +3,7 @@
     "include": ["src/**/*.ts"],
     "references": [
         { "path": "packages/config/tsconfig.json" },
-        { "path": "packages/audioReply/tsconfig.json" }
+        { "path": "packages/audioReply/tsconfig.json" },
+        { "path": "packages/alisa-api/tsconfig.json" }
     ]
 }
