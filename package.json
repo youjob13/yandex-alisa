@@ -7,9 +7,9 @@
     "scripts": {
         "dev": "nodemon --exec node --loader ts-node/esm src/index.ts",
         "start": "node dist/index.js",
-        "build": "tsc",
-        "lint": "eslint src/**/*.ts",
-        "lint:fix": "eslint src/**/*.ts --fix",
+        "build": "tsc -b tsconfig.json",
+        "lint": "eslint src/**/*.ts packages/**/*.ts",
+        "lint:fix": "eslint src/**/*.ts packages/**/*.ts --fix",
         "format": "prettier . --write"
     },
     "repository": {
@@ -36,5 +36,14 @@
         "ts-node": "10.9.2",
         "typescript": "5.6.2",
         "typescript-eslint": "8.6.0"
-    }
+    },
+    "dependencies": {
+        "@myalisa/audio-reply": "^1.0.0",
+        "@myalisa/config": "^1.0.0",
+        "fastify": "5.0.0"
+    },
+    "workspaces": [
+        "packages/config",
+        "packages/audioReply"
+    ]
 }

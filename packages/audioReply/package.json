@@ -1,0 +1,8 @@
+{
+    "name": "@myalisa/audio-reply",
+    "version": "1.0.0",
+    "main": "dist/index.js",
+    "author": "",
+    "license": "ISC",
+    "type": "commonjs"
+}
