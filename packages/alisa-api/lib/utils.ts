@@ -32,17 +32,17 @@ export const buildResponse = ({
             ? {
                   value: session_state,
               }
-            : { value: 10 },
+            : undefined,
         user_state_update: user_state_update
             ? {
                   value: user_state_update,
               }
-            : { value: 42 },
+            : undefined,
         application_state: application_state
             ? {
                   value: application_state,
               }
-            : { value: 37 },
+            : undefined,
         analytics,
         version: version ?? '1.0',
     }

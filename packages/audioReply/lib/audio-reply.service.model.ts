@@ -7,6 +7,6 @@ export interface IAudioReplyService {
     ) => ISkillResponse
 }
 export interface IAudioReplyArgs {
-    yaDialogId: string
+    skillId: string
     resourcesIds: string | string[]
 }
