@@ -22,4 +22,7 @@ Before you begin, ensure you have met the following requirements:
 
 ### Installation
 
-Follow these steps to get your development environment running: `npm run dev`
+Follow these steps to get your development environment running:
+
+1. `npm install`
+2. `npm run dev`
