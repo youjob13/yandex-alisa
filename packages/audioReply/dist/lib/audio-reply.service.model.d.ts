@@ -3,7 +3,7 @@ export interface IAudioReplyService {
     play: (request: IRequestBody, commandArgs: IAudioReplyArgs) => ISkillResponse;
 }
 export interface IAudioReplyArgs {
-    yaDialogId: string;
+    skillId: string;
     resourcesIds: string | string[];
 }
 //# sourceMappingURL=audio-reply.service.model.d.ts.map

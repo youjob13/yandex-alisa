@@ -8,7 +8,7 @@ class GreetingFactory {
         const randomResourceId = getRandomValue(this.options.resourcesIds);
         return buildResponse({
             text: 'Your response',
-            tts: `<speaker audio="dialogs-upload/${this.options.yaDialogId}/${randomResourceId}.opus">`,
+            tts: `<speaker audio="dialogs-upload/${this.options.skillId}/${randomResourceId}.opus">`,
         });
     }
 }

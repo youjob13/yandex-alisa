@@ -1,13 +1,10 @@
-import { IRequestBody } from '@myalisa/alisa-api'
-import { AudioReplyService } from '@myalisa/audio-reply'
-import { IAudioReplyService } from '@myalisa/audio-reply/lib/audio-reply.service.model.js'
 import { FastifyInstance } from 'fastify'
+import { IRequestBody } from '@myalisa/alisa-api'
+import * as Config from '@myalisa/config'
+import { AudioReplyService, IAudioReplyService } from '@myalisa/audio-reply'
 
 export const createRouter = (app: FastifyInstance) => {
     const audioReplyService: IAudioReplyService = new AudioReplyService()
-    const yaDialogId =
-        process.env.YA_ID ?? '7f76afa5-a075-405c-9773-fd8fe509c083'
-    const resourcesIds = ['20279f08-31d4-42c5-b6ca-0bceaf8c712c']
 
     app.get('/', () => {
         return 'Hi'
@@ -17,8 +14,8 @@ export const createRouter = (app: FastifyInstance) => {
         try {
             const body = request.body as IRequestBody
             return await audioReplyService.play(body, {
-                yaDialogId,
-                resourcesIds,
+                skillId: Config.YaDialogs.GREETING.SKILL_ID,
+                resourcesIds: Config.YaDialogs.GREETING.RESOURCES_IDS,
             })
         } catch (error) {
             app.log.error(error)

@@ -10,17 +10,17 @@ export const buildResponse = ({ text, tts, directives, end_session, session_stat
             ? {
                 value: session_state,
             }
-            : { value: 10 },
+            : undefined,
         user_state_update: user_state_update
             ? {
                 value: user_state_update,
             }
-            : { value: 42 },
+            : undefined,
         application_state: application_state
             ? {
                 value: application_state,
             }
-            : { value: 37 },
+            : undefined,
         analytics,
         version: version !== null && version !== void 0 ? version : '1.0',
     };
