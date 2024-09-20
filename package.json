@@ -1,8 +1,19 @@
 {
     "name": "yandex-alisa",
     "version": "1.0.0",
-    "description": "Custom commands for Yandex Alisa",
+    "description": "Custom scripts for Yandex Alisa",
     "main": "index.js",
+    "keywords": [
+        "alisa",
+        "yandex",
+        "yandex alisa",
+        "алиса",
+        "яндекс",
+        "яндекс алиса",
+        "умный дом",
+        "голосовой помощник",
+        "voice assistant"
+    ],
     "type": "module",
     "scripts": {
         "dev": "nodemon --experimental-specifier-resolution=node ./src/index.ts",
