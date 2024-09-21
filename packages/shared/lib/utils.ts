@@ -3,6 +3,7 @@ export const getRandomValueId = (values: string[]): number => {
 }
 export const getRandomValue = (rawValues: string | string[]): string => {
     const values = Array.isArray(rawValues) ? rawValues : [rawValues]
+    console.log('values', rawValues, values)
     const randomValueId = getRandomValueId(values)
     return values[randomValueId]
 }

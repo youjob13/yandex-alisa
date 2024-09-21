@@ -13,6 +13,8 @@ export const createRouter = (app: FastifyInstance) => {
     app.post('/', async (request) => {
         try {
             const body = request.body as IRequestBody
+            app.log.info(body, '[INCOMING_REQUEST]')
+            console.log(111, Config.YaDialogs.GREETING.RESOURCES_IDS)
             return await audioReplyService.play(body, {
                 skillId: Config.YaDialogs.GREETING.SKILL_ID,
                 resourcesIds: Config.YaDialogs.GREETING.RESOURCES_IDS,
