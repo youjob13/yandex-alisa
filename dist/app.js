@@ -1,7 +1,9 @@
 import Fastify from 'fastify';
 import initRoutes from './routes.js';
 const fastify = Fastify({
-    logger: true,
+    logger: {
+        level: process.env.LOG_LEVEL || 'info',
+    },
 });
 export class App {
     constructor(config) {

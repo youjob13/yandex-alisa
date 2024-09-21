@@ -8,10 +8,13 @@ export const createRouter = (app) => {
     app.post('/', async (request) => {
         try {
             const body = request.body;
-            return await audioReplyService.play(body, {
+            app.log.debug(body, '[INCOMING_REQUEST]');
+            const result = await audioReplyService.play(body, {
                 skillId: Config.YaDialogs.GREETING.SKILL_ID,
                 resourcesIds: Config.YaDialogs.GREETING.RESOURCES_IDS,
             });
+            app.log.debug(result, '[AUDIO_REPLY/RESPONSE]');
+            return result;
         }
         catch (error) {
             app.log.error(error);
