@@ -10,7 +10,7 @@ describe('getRandomValue', () => {
         assert.equal(actualResult, true)
     })
 
-    it('get random value if only one option is provided', () => {
+    it('get random value if only one option has been provided', () => {
         const option = 'Value 1'
         const actualResult = getRandomValue(option)
         assert.equal(actualResult, option)
