@@ -19,7 +19,6 @@ export const createRouter = (app: FastifyInstance) => {
                 skillId: Config.YaDialogs.GREETING.SKILL_ID,
                 resourcesIds: Config.YaDialogs.GREETING.RESOURCES_IDS,
             })
-
             app.log.debug(result, '[AUDIO_REPLY/RESPONSE]')
 
             return result
