@@ -6,6 +6,7 @@
     "license": "ISC",
     "type": "module",
     "dependencies": {
-        "@myalisa/shared": "^1.0.0"
+        "@myalisa/shared": "^1.0.0",
+        "@myalisa/ya-dialogs": "^1.0.0"
     }
 }

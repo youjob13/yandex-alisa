@@ -1,10 +1,10 @@
-import { buildResponse, ISkillResponse } from '@myalisa/ya-dialogs'
+import { ISkillResponse } from '@myalisa/ya-dialogs'
 import assert from 'node:assert'
 import { describe, it } from 'node:test'
 import { CommandFactory, ICommandFactory } from './factories.js'
 
 describe('FAQFactory', () => {
-    it('return ', () => {
+    it('return helper-text', () => {
         const mockText = 'To start this skill do this ...'
         const factory: ICommandFactory = new CommandFactory('FAQ', {
             resourcesIds: [],
@@ -14,42 +14,24 @@ describe('FAQFactory', () => {
         const actualResponse = factory.run()
         assert.deepStrictEqual(actualResponse.response.text, mockText)
     })
+})
 
-    it('return valid response. [Full]', () => {
-        const expectedResponse: ISkillResponse = {
-            response: {
-                text: 'Stub text',
-                tts: 'Stub TTS',
-                end_session: true,
-                directives: {},
-            },
-            session_state: {
-                value: 111,
-            },
-            user_state_update: {
-                value: 111,
-            },
-            application_state: {
-                value: 111,
-            },
-            analytics: {
-                events: [
-                    {
-                        name: 'test event',
-                        value: [{ a: 1 }],
-                    },
-                ],
-            },
-            version: '1.0',
+describe('GreetingFactory', () => {
+    it('return random selected audio', () => {
+        const skillId = '0'
+        const resourcesIds = ['1']
+        const expectedResponse: ISkillResponse['response'] = {
+            text: 'Your response',
+            tts: `<speaker audio="dialogs-upload/${skillId}/${resourcesIds[0]}.opus">`,
+            end_session: true,
+            directives: {},
         }
-        const actualResponse = buildResponse({
-            text: expectedResponse.response.text,
-            tts: expectedResponse.response.tts,
-            analytics: expectedResponse.analytics,
-            application_state: expectedResponse.application_state?.value,
-            session_state: expectedResponse.session_state?.value,
-            user_state_update: expectedResponse.user_state_update?.value,
+        const factory: ICommandFactory = new CommandFactory('', {
+            resourcesIds,
+            skillId,
+            text: expectedResponse.text,
         })
-        assert.deepStrictEqual(actualResponse, expectedResponse)
+        const actualResponse = factory.run()
+        assert.deepStrictEqual(actualResponse.response, expectedResponse)
     })
 })
