@@ -23,7 +23,9 @@
         "lint": "eslint src/**/*.ts packages/**/*.ts",
         "lint:fix": "eslint src/**/*.ts packages/**/*.ts --fix",
         "format": "prettier . --write",
-        "test": "npm run test --workspaces --if-present"
+        "test": "npm run test --workspaces --if-present",
+        "test:coverage": "npm run test:coverage --workspaces --if-present",
+        "test:coverage:overall": "node --test --experimental-test-coverage"
     },
     "repository": {
         "type": "git",
@@ -42,7 +44,7 @@
         "format",
         "lint:fix",
         "build",
-        "test"
+        "test:coverage:overall"
     ],
     "homepage": "https://github.com/youjob13/yandex-alisa#readme",
     "devDependencies": {

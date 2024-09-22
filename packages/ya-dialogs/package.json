@@ -4,5 +4,9 @@
     "main": "dist/index.js",
     "author": "",
     "license": "ISC",
-    "type": "module"
+    "type": "module",
+    "scripts": {
+        "test": "node --test .",
+        "test:coverage": "node --test --experimental-test-coverage"
+    }
 }

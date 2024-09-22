@@ -42,14 +42,11 @@ export class CommandFactory implements ICommandFactory {
                 break
             }
             default: {
-                factory = new FAQFactory({
-                    ...options,
-                    text: 'Чтобы заставить говорить следующего кореша, скажи: "алиса еще". Чтобы остановить своих корешей, скажи: "алиса хватит"',
-                })
+                factory = new FAQFactory(options)
                 break
             }
         }
-        if (factory == null) {
+        if (factory.run == null) {
             throw new Error('Method is not implemented')
         }
         return factory
