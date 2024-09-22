@@ -3,6 +3,7 @@ import assert from 'node:assert'
 import { describe, it } from 'node:test'
 import { IAudioReplyService } from './audio-reply.service.model.js'
 import { AudioReplyService } from './audio-reply.service.js'
+import { RandomPicker } from '@myalisa/shared'
 
 describe('FAQFactory', () => {
     it('return ', () => {
@@ -20,11 +21,10 @@ describe('FAQFactory', () => {
             version: '1.0',
         }
 
-        const audioReplyService: IAudioReplyService = new AudioReplyService()
-        const actualResponse = audioReplyService.play(TestHelpers.MockRequest, {
-            resourcesIds: [],
-            skillId: TestHelpers.MockRequest.session.skill_id,
-        })
+        const audioReplyService: IAudioReplyService = new AudioReplyService(
+            new RandomPicker(['1'])
+        )
+        const actualResponse = audioReplyService.play(TestHelpers.MockRequest)
 
         assert.deepStrictEqual(actualResponse, expectedResponse)
     })

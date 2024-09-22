@@ -1,5 +1,4 @@
 import { buildResponse, ISkillResponse } from '@myalisa/ya-dialogs'
-import { getRandomValue } from '@myalisa/shared'
 import {
     CommandFactoryArgs,
     IAudioReplyArgs,
@@ -22,10 +21,9 @@ class GreetingFactory implements ICommandFactory {
     constructor(private readonly options: IAudioReplyArgs) {}
 
     run() {
-        const randomResourceId = getRandomValue(this.options.resourcesIds)
         return buildResponse({
             text: 'Your response',
-            tts: `<speaker audio="dialogs-upload/${this.options.skillId}/${randomResourceId}.opus">`,
+            tts: `<speaker audio="dialogs-upload/${this.options.skillId}/${this.options.resourceId}.opus">`,
         })
     }
 }

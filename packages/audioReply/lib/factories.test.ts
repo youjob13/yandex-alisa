@@ -7,7 +7,7 @@ describe('FAQFactory', () => {
     it('return helper-text', () => {
         const mockText = 'To start this skill do this ...'
         const factory: ICommandFactory = new CommandFactory('FAQ', {
-            resourcesIds: [],
+            resourceId: '1',
             skillId: '',
             text: mockText,
         })
@@ -27,7 +27,7 @@ describe('GreetingFactory', () => {
             directives: {},
         }
         const factory: ICommandFactory = new CommandFactory('', {
-            resourcesIds,
+            resourceId: '1',
             skillId,
             text: expectedResponse.text,
         })

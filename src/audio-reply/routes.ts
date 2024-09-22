@@ -2,9 +2,13 @@ import { FastifyInstance } from 'fastify'
 import { IRequestBody } from '@myalisa/ya-dialogs'
 import * as Config from '@myalisa/config'
 import { AudioReplyService, IAudioReplyService } from '@myalisa/audio-reply'
+import { IRandomPicker, RandomPicker } from '@myalisa/shared'
 
 export const createRouter = (app: FastifyInstance) => {
-    const audioReplyService: IAudioReplyService = new AudioReplyService()
+    const picker: IRandomPicker<string> = new RandomPicker(
+        Config.YaDialogs.GREETING.RESOURCES_IDS
+    )
+    const audioReplyService: IAudioReplyService = new AudioReplyService(picker)
 
     app.get('/', () => {
         return 'Hi'
@@ -15,10 +19,7 @@ export const createRouter = (app: FastifyInstance) => {
             const body = request.body as IRequestBody
             app.log.debug(body, '[INCOMING_REQUEST]')
 
-            const result = await audioReplyService.play(body, {
-                skillId: body.session.skill_id,
-                resourcesIds: Config.YaDialogs.GREETING.RESOURCES_IDS,
-            })
+            const result = await audioReplyService.play(body)
             app.log.debug(result, '[AUDIO_REPLY/RESPONSE]')
 
             return result
