@@ -9,4 +9,5 @@ export interface IAudioReplyService {
 export interface IAudioReplyArgs {
     skillId: string
     resourcesIds: string | string[]
+    endSession?: boolean
 }

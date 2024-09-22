@@ -10,6 +10,7 @@ class GreetingFactory implements ICommandFactory {
         return buildResponse({
             text: 'Your response',
             tts: `<speaker audio="dialogs-upload/${this.options.skillId}/${randomResourceId}.opus">`,
+            end_session: this.options.endSession ?? false,
         })
     }
 }
@@ -20,9 +21,8 @@ export class CommandFactory implements ICommandFactory {
     constructor(command: string, options: IAudioReplyArgs) {
         let factory: ICommandFactory | null = null
         switch (command.toLowerCase()) {
-            // ToDo: !!!
             case '':
-            case 'я дома': {
+            case 'ещё': {
                 factory = new GreetingFactory(options)
                 break
             }
