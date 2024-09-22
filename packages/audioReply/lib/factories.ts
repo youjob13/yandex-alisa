@@ -1,4 +1,4 @@
-import { buildResponse, ISkillResponse } from '@myalisa/alisa-api'
+import { buildResponse, ISkillResponse } from '@myalisa/ya-dialogs'
 import { getRandomValue } from '@myalisa/shared'
 import {
     CommandFactoryArgs,

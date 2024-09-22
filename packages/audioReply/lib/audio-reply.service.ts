@@ -1,4 +1,4 @@
-import { IRequestBody } from '@myalisa/alisa-api'
+import { IRequestBody } from '@myalisa/ya-dialogs'
 import {
     CommandFactoryArgs,
     IAudioReplyService,

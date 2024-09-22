@@ -4,7 +4,7 @@
     "references": [
         { "path": "packages/config/tsconfig.json" },
         { "path": "packages/audioReply/tsconfig.json" },
-        { "path": "packages/alisa-api/tsconfig.json" },
+        { "path": "packages/ya-dialogs/tsconfig.json" },
         { "path": "packages/shared/tsconfig.json" }
     ]
 }

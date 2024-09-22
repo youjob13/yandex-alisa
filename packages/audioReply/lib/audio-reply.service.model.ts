@@ -1,4 +1,4 @@
-import { IRequestBody, ISkillResponse } from '@myalisa/alisa-api'
+import { IRequestBody, ISkillResponse } from '@myalisa/ya-dialogs'
 
 export interface IAudioReplyService {
     play: (

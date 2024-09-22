@@ -1,5 +1,5 @@
 import { FastifyInstance } from 'fastify'
-import { IRequestBody } from '@myalisa/alisa-api'
+import { IRequestBody } from '@myalisa/ya-dialogs'
 import * as Config from '@myalisa/config'
 import { AudioReplyService, IAudioReplyService } from '@myalisa/audio-reply'
 

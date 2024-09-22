@@ -58,15 +58,15 @@
         "typescript-eslint": "8.6.0"
     },
     "dependencies": {
-        "@myalisa/alisa-api": "^1.0.0",
         "@myalisa/audio-reply": "^1.0.0",
         "@myalisa/config": "^1.0.0",
+        "@myalisa/ya-dialogs": "^1.0.0",
         "fastify": "5.0.0"
     },
     "workspaces": [
         "packages/config",
         "packages/audioReply",
-        "packages/alisa-api",
+        "packages/ya-dialogs",
         "packages/shared"
     ]
 }
