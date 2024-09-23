@@ -6,7 +6,7 @@ import { AudioReplyService } from './audio-reply.service.js'
 import { RandomPicker } from '@myalisa/shared'
 
 describe('FAQFactory', () => {
-    it('return ', () => {
+    it('return valid response', () => {
         const expectedResponse: ISkillResponse = {
             response: {
                 text: 'Your response',
