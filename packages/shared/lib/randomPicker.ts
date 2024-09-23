@@ -9,7 +9,6 @@ export class RandomPicker<TItem> implements IRandomPicker<TItem> {
 
     constructor(items: TItem[]) {
         this.originalItems = [...items]
-        this.items = shuffleArray(this.items)
     }
 
     pick(): NonNullable<TItem> {
