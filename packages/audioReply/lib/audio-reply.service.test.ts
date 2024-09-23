@@ -1,7 +1,7 @@
 import { ISkillResponse, TestHelpers } from '@myalisa/ya-dialogs'
 import assert from 'node:assert'
 import { describe, it } from 'node:test'
-import { IAudioReplyService } from './audio-reply.service.model.js'
+import type { IAudioReplyService } from './audio-reply.service.model.js'
 import { AudioReplyService } from './audio-reply.service.js'
 import { RandomPicker } from '@myalisa/shared'
 

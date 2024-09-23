@@ -56,3 +56,16 @@ export interface ISkillResponse {
     analytics?: IAnalytics
     version: string
 }
+
+export interface IAudioReplyArgs extends IBaseReplyArgs {
+    skillId: string
+    resourceId: string
+}
+export interface IFAQReplyArgs extends IBaseReplyArgs {
+    text?: string
+    tts?: string
+}
+export interface IBaseReplyArgs {
+    endSession?: boolean
+}
+export type CommandFactoryArgs = IAudioReplyArgs & IFAQReplyArgs

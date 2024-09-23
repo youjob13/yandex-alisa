@@ -1,9 +1,9 @@
-import { buildResponse, ISkillResponse } from '@myalisa/ya-dialogs'
-import {
-    CommandFactoryArgs,
-    IAudioReplyArgs,
+import { buildResponse, type ISkillResponse } from '@myalisa/ya-dialogs'
+import type {
     IFAQReplyArgs,
-} from './audio-reply.service.model.js'
+    IAudioReplyArgs,
+    CommandFactoryArgs,
+} from './models.js'
 
 class FAQFactory implements ICommandFactory {
     constructor(private readonly options: IFAQReplyArgs) {}

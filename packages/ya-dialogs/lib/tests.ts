@@ -1,4 +1,4 @@
-import { IRequestBody } from './models.js'
+import type { IRequestBody } from './models.js'
 
 export const MockRequest: IRequestBody = {
     meta: {

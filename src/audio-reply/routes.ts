@@ -1,8 +1,11 @@
 import { FastifyInstance } from 'fastify'
-import { IRequestBody } from '@myalisa/ya-dialogs'
+import type { IRequestBody } from '@myalisa/ya-dialogs'
 import * as Config from '@myalisa/config'
-import { AudioReplyService, IAudioReplyService } from '@myalisa/audio-reply'
-import { IRandomPicker, RandomPicker } from '@myalisa/shared'
+import {
+    type IAudioReplyService,
+    AudioReplyService,
+} from '@myalisa/audio-reply'
+import { type IRandomPicker, RandomPicker } from '@myalisa/shared'
 
 export const createRouter = (app: FastifyInstance) => {
     const picker: IRandomPicker<string> = new RandomPicker(

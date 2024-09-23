@@ -1,7 +1,7 @@
-import { ISkillResponse } from '@myalisa/ya-dialogs'
+import type { ISkillResponse } from '@myalisa/ya-dialogs'
 import assert from 'node:assert'
 import { describe, it } from 'node:test'
-import { CommandFactory, ICommandFactory } from './factories.js'
+import { CommandFactory, type ICommandFactory } from './factories.js'
 
 describe('FAQFactory', () => {
     it('return helper-text', () => {

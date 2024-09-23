@@ -1,4 +1,4 @@
-import { IAnalytics, ISkillResponse } from './models.js'
+import type { IAnalytics, ISkillResponse } from './models.js'
 
 export const buildResponse = ({
     text,

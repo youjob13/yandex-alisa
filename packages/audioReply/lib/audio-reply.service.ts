@@ -1,7 +1,6 @@
-import { IRequestBody } from '@myalisa/ya-dialogs'
-import { IRandomPicker } from '@myalisa/shared'
-import { IAudioReplyService } from './audio-reply.service.model.js'
-import { CommandFactory } from './factories.js'
+import { type IRequestBody, CommandFactory } from '@myalisa/ya-dialogs'
+import type { IRandomPicker } from '@myalisa/shared'
+import type { IAudioReplyService } from './audio-reply.service.model.js'
 
 export class AudioReplyService implements IAudioReplyService {
     constructor(private readonly picker: IRandomPicker<string>) {}
