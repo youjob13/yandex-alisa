@@ -24,7 +24,23 @@ describe('FAQFactory', () => {
         const audioReplyService: IAudioReplyService = new AudioReplyService(
             new RandomPicker(['1'])
         )
-        const actualResponse = audioReplyService.play(TestHelpers.MockRequest)
+        const {
+            response,
+            version,
+            analytics,
+            application_state,
+            session_state,
+            user_state_update,
+        } = audioReplyService.play(TestHelpers.MockRequest)
+
+        const actualResponse = {
+            response,
+            version,
+            analytics,
+            application_state,
+            session_state,
+            user_state_update,
+        }
 
         assert.deepStrictEqual(actualResponse, expectedResponse)
     })

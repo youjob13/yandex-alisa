@@ -5,6 +5,9 @@
         { "path": "packages/config/tsconfig.json" },
         { "path": "packages/audioReply/tsconfig.json" },
         { "path": "packages/ya-dialogs/tsconfig.json" },
-        { "path": "packages/shared/tsconfig.json" }
+        { "path": "packages/shared/tsconfig.json" },
+        { "path": "packages/annushka/tsconfig.json" },
+        { "path": "packages/mongodb/tsconfig.json" },
+        { "path": "packages/core/tsconfig.json" }
     ]
 }

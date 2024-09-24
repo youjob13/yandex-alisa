@@ -31,13 +31,13 @@ export interface IRequestBody {
     version: string
 }
 
-interface ISkillResponseObj {
+export interface ISkillResponseObj {
     text: string
     tts: string
     end_session: boolean
     directives?: object
 }
-interface IValue {
+export interface IValue {
     value: number
 }
 interface IAnalyticsEvent {

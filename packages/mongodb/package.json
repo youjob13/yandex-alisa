@@ -1,0 +1,16 @@
+{
+    "name": "@myalisa/mongodb",
+    "version": "1.0.0",
+    "main": "dist/index.js",
+    "author": "",
+    "license": "ISC",
+    "type": "module",
+    "scripts": {
+        "test": "node --test .",
+        "test:coverage": "node --test --experimental-test-coverage"
+    },
+    "dependencies": {
+        "@myalisa/config": "^1.0.0",
+        "@myalisa/core": "^1.0.0"
+    }
+}

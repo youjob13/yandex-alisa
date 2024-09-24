@@ -1,22 +1,26 @@
-import type { ISkillResponse } from '@myalisa/ya-dialogs'
 import assert from 'node:assert'
 import { describe, it } from 'node:test'
 import { CommandFactory, type ICommandFactory } from './factories.js'
+import type { IRequestBody, ISkillResponse } from './models.js'
 
 describe('FAQFactory', () => {
     it('return helper-text', () => {
         const mockText = 'To start this skill do this ...'
-        const factory: ICommandFactory = new CommandFactory('FAQ', {
+        const factory: ICommandFactory = new CommandFactory({
             resourceId: '1',
             skillId: '',
             text: mockText,
         })
-        const actualResponse = factory.run()
+        const actualResponse = factory.run({
+            request: {
+                command: 'FAQ',
+            },
+        } as IRequestBody)
         assert.deepStrictEqual(actualResponse.response.text, mockText)
     })
 })
 
-describe('GreetingFactory', () => {
+describe('AudioFactory', () => {
     it('return random selected audio', () => {
         const skillId = '0'
         const resourcesIds = ['1']
@@ -26,12 +30,16 @@ describe('GreetingFactory', () => {
             end_session: true,
             directives: {},
         }
-        const factory: ICommandFactory = new CommandFactory('', {
+        const factory: ICommandFactory = new CommandFactory({
             resourceId: '1',
             skillId,
             text: expectedResponse.text,
         })
-        const actualResponse = factory.run()
+        const actualResponse = factory.run({
+            request: {
+                command: '',
+            },
+        } as IRequestBody)
         assert.deepStrictEqual(actualResponse.response, expectedResponse)
     })
 })

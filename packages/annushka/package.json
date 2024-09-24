@@ -1,0 +1,17 @@
+{
+    "name": "@myalisa/annushka",
+    "version": "1.0.0",
+    "main": "dist/index.js",
+    "author": "",
+    "license": "ISC",
+    "type": "module",
+    "scripts": {
+        "test": "node --test .",
+        "test:coverage": "node --test --experimental-test-coverage"
+    },
+    "dependencies": {
+        "@myalisa/core": "^1.0.0",
+        "@myalisa/mongodb": "^1.0.0",
+        "@myalisa/ya-dialogs": "^1.0.0"
+    }
+}

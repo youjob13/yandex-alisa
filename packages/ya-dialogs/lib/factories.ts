@@ -1,15 +1,17 @@
-import { buildResponse, type ISkillResponse } from '@myalisa/ya-dialogs'
 import type {
     IFAQReplyArgs,
     IAudioReplyArgs,
     CommandFactoryArgs,
+    IRequestBody,
+    ISkillResponse,
 } from './models.js'
+import { ResponseBuilder } from './response-builder.js'
 
 class FAQFactory implements ICommandFactory {
     constructor(private readonly options: IFAQReplyArgs) {}
 
     run() {
-        return buildResponse({
+        return new ResponseBuilder({
             text: this.options.text ?? 'Your response',
             tts: this.options.tts ?? this.options.text,
             end_session: this.options.endSession ?? false,
@@ -17,44 +19,37 @@ class FAQFactory implements ICommandFactory {
     }
 }
 
-class GreetingFactory implements ICommandFactory {
+class AudioFactory implements ICommandFactory {
     constructor(private readonly options: IAudioReplyArgs) {}
 
     run() {
-        return buildResponse({
+        return new ResponseBuilder({
             text: 'Your response',
-            tts: `<speaker audio="dialogs-upload/${this.options.skillId}/${this.options.resourceId}.opus">`,
-        })
+        }).withAudio(this.options)
     }
 }
 export interface ICommandFactory {
-    run: () => ISkillResponse
+    run: (request: IRequestBody) => ISkillResponse
 }
 
 export class CommandFactory implements ICommandFactory {
-    constructor(command: string, options: CommandFactoryArgs) {
+    constructor(private readonly options: CommandFactoryArgs) {}
+
+    run(request: IRequestBody) {
         let factory: ICommandFactory | null = null
-        switch (command.toLowerCase()) {
+        switch (request.request.command.toLowerCase()) {
             case '': {
-                factory = new GreetingFactory(options)
+                factory = new AudioFactory(this.options)
                 break
             }
             default: {
-                factory = new FAQFactory(options)
+                factory = new FAQFactory(this.options)
                 break
             }
         }
         if (factory.run == null) {
             throw new Error('Method is not implemented')
         }
-        return factory
-    }
-
-    run() {
-        /**
-         * @description StubResponse
-         * It should be never executed
-         */
-        return buildResponse({ text: 'Stub' })
+        return factory.run(request)
     }
 }
